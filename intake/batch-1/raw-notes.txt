@@ -1,0 +1,88 @@
+* AI Agentic Flywheel Concept
+* hermes AI agents
+* Fathom AI notetaker, Granola AI notekaer, building my own AI notetaker, and physical notetacker like AI
+* Fish Audio AI
+* Claude Code, Code MODE
+* Aseprite AI
+* Motion sites open sourcd github
+* You can teach Claude Code to reverse engineer any company’s marketing strategy with this three-system setup.
+
+
+* Install coreyhaines31/marketingskills and run the reverse-engineer-marketing skill to log a competitor’s dated moves against their traffic. Give Claude Code Agent Reach so it can read their posts, comments, Reddit threads and YouTube transcripts. Feed both into the marketing agent framework. It keeps only the plays their audience actually responded to and ranks them by what you can ship this month. Claude Code gets the top three as build tasks.
+* Using Awwwards , curated.design, Saaspo, Unsection, Details.so, Spell UI, Bencho, and making a claude skill or putting in into claude to make better websites. 
+* Comment "RANKING" and I'll send you all five, with the one-line install for each 👇
+
+The 5 most installed Claude Code skills of all time (skills.sh leaderboard):
+
+5. Frontend Design by Anthropic (1.1M): your site stops looking like AI made it
+4. Grill Me by Matt Pocock (1.6M): grills you with questions until your plan has no holes
+3. HyperFrames by HeyGen (1.6M): ask for a video and Claude builds it with code
+2. Agent Browser by Vercel (1.6M): your AI opens the browser, clicks and fills out forms
+1. Find Skills by Vercel (4.4M): say the task, it finds the right skill for you
+
+Save this so you have all five when you need them.  (I'M WONDERING IF ANY OF THESE ARE USEFUL.)
+* Using Ripping to get views on reels.
+* Using these on websites Transition as scroll, Live 3D hero, Spatial browsing, Touchable surface
+* He used Claude on 740 job listings. Applied to 68. Got 12 interviews and a job offer.
+
+career-ops is free and open source. Claude scores every job out of 5 against your CV, tells you to skip the weak ones, and drafts your CV, answers and recruiter message for the good ones. It never hits submit: you do.
+
+Comment BUILD and I'll send you the link + the setup steps.
+
+Free and open source (MIT). Example data on screen. Not sponsored.
+
+[#claudecode](https://www.instagram.com/explore/tags/claudecode/) [#claudeai](https://www.instagram.com/explore/tags/claudeai/) [#aitools](https://www.instagram.com/explore/tags/aitools/)
+* ob market’s cooked, so my plan was a master’s at MIT. With a 2.7.
+
+Claude had a better plan: Playwright (free, from Microsoft) + one prompt. It finds new grad jobs posted this week on company career pages, matches them to my resume, puts the top 10 in a sheet and fills every application. Then it stops. I press Submit.
+
+Graduating soon? What’s your plan? 👇
+Comment AUTO and I’ll send you the copy-paste setup + the full prompt.
+* applied to 200 jobs on LinkedIn. Claude found the ones I never saw.
+
+Companies post on their own hiring sites first. LinkedIn gets them days later. Recruiters search those sites straight from Google, and now Claude does it for me every morning at 8, checks my CV, and keeps only the jobs I actually fit.
+
+Comment SECRET and I’ll send you the exact searches and the prompt.
+
+[#jobsearch](https://www.instagram.com/explore/tags/jobsearch/) [#claudeai](https://www.instagram.com/explore/tags/claudeai/) [#jobhunting](https://www.instagram.com/explore/tags/jobhunting/) [#careertips](https://www.instagram.com/explore/tags/careertips/) [#remotejobs](https://www.instagram.com/explore/tags/remotejobs/)
+5w
+* The agency on githubComment “AGENCY” and I’ll send you the repo.
+
+👇 READ BELOW
+
+You are doing 17 jobs. There is a free repo that does them properly: 270 AI specialists across 17 divisions, each one written by hand with its own personality, workflow and success metrics.
+
+msitarzewski/agency-agents. 139,604 stars, 22,798 forks, MIT licensed. It started as a Reddit thread about agent specialisation.
+
+★ A frontend developer who knows Core Web Vitals
+★ An ad creative strategist sitting next to a PPC campaign strategist
+★ A Reddit community builder whose brief says stop marketing and start being a member
+★ A reality checker whose entire job is telling you the plan will not work
+★ And 266 more across Engineering, Design, Sales, Security, Testing, Finance, Healthcare and the rest
+
+Engineering and Specialized alone are 114 agents, so if you only ever install two divisions, those are the two that cover the most ground.
+
+The desktop app is a second free repo. Native for macOS, Windows and Linux, one brew command, and it installs the roster into Claude Code, Cursor, Codex, Gemini CLI, OpenCode, Qwen and Osaurus for you.
+
+The part nobody mentions: the filter is the whole skill. Install two divisions, not 270 files. Run the list command, read the agent counts, pick the teams you would actually hire, and add more only once you have used the ones you have.
+
+What makes these different from a pasted system prompt is that each file ships success metrics. The agent has a definition of done, which is exactly what prompt libraries leave out.
+
+Comment “AGENCY” and I’ll send you the repo plus the setup guide.
+* 10 GitHub repos competing with products worth billions.
+
+These repos offer alternatives to tools used for:
+CRM
+E-signatures
+Video streaming
+Team collaboration
+Automation
+Analytic and more
+
+Whether you’re a developer, founder, or just tired of expensive subscriptions, these projects are worth exploring.
+
+Which repo was the most impressive?
+
+Follow [@artificialzone](https://www.instagram.com/artificialzone/) for more things that actually matter.
+
+[#github](https://www.instagram.com/explore/tags/github/) [#opensource](https://www.instagram.com/explore/tags/opensource/) [#programming](https://www.instagram.com/explore/tags/programming/) [#developer](https://www.instagram.com/explore/tags/developer/) [#coding](https://www.instagram.com/explore/tags/coding/) webdev software startup tech indiehacker buildinpublic
