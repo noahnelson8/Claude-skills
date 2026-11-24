@@ -1,7 +1,103 @@
 [
   {
-    "input": "https://www.instagram.com/reel/DfCxRQ8uRli/",
+    "input": "https://www.instagram.com/reel/DgGVKalS7Xo/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\christian-comment-honeypot-for-the-free-claude-cod",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/DgACXgJNnWU/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\ylenia-fedi-comment-style-for-the-prompts",
+    "frames": 7,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/Df8FecZldKt/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\hugo-manning-learn-ai-with-hugo-comment-sites-and",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/Df8Npd5maM3/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\reggie-junior-comment-ranking-and-ill-send-you-all",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/Df5WHxsjSqj/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\ben-zogby-33-million-views-in-two-weeks",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/Df56UBEBL5Q/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\marcelo-cedeno-wait-for-it-save-this-for-next",
+    "frames": 4,
+    "transcript": false,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/DfwW3lhIhBL/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\cam-builds-he-used-claude-on-740-job-listings-appl",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/DesvNaXM_j5/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\ashutosh-job-markets-cooked-so-my-plan-was-a-maste",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/DeYL3wXs5gd/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\ashutosh-i-applied-to-200-jobs-on-linkedin-claude",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/Db9Br3XBTPj/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\aidan-murphy-comment-sued-to-get-sent-over-my-full",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/Db1Y5sGyxrj/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\alex-ai-comment-agency-and-ill-send-you-the-repo",
+    "frames": 10,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/reel/DbavfO-xZoF/",
+    "ok": true,
+    "folder": "C:\\Users\\nwnel\\OneDrive\\claude-skills\\intake\\carter-perez-comment-opsec-and-ill-dm-you-all-the",
+    "frames": 11,
+    "transcript": true,
+    "note": null
+  },
+  {
+    "input": "https://www.instagram.com/p/DZ9dQzQEUb8/",
     "ok": false,
-    "error": "[WinError 5] Access is denied: 'C:\\\\Users\\\\nwnel\\\\OneDrive\\\\claude-skills\\\\intake\\\\.tmp-20261124-083401' -> 'C:\\\\Users\\\\nwnel\\\\OneDrive\\\\claude-skills\\\\intake\\\\morenicksaraev-motionsites-is-a-free-open-source-s' -> Instagram wants a login. Retry with --cookies-from-browser firefox or --cookies cookies.txt"
+    "error": "ERROR: [Instagram] DZ9dN2FxtXt: No video formats found!"
   }
 ]

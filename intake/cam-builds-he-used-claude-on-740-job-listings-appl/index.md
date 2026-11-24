@@ -1,0 +1,38 @@
+# Cam Builds: He used Claude on 740 job listings. Applied to 68. Got 12 interviews and a job o
+
+- URL: https://www.instagram.com/reel/DfwW3lhIhBL/
+- Posted: 20261115 · Duration: 66.5s · Views: None · Likes: 615
+- Contact sheet: sheet.jpg · Frames: 11 in frames/
+- Transcript: transcript.txt (en)
+
+## Caption
+
+He used Claude on 740 job listings. Applied to 68. Got 12 interviews and a job offer.
+
+career-ops is free and open source. Claude scores every job out of 5 against your CV, tells you to skip the weak ones, and drafts your CV, answers and recruiter message for the good ones. It never hits submit: you do.
+
+Comment BUILD and I'll send you the link + the setup steps.
+
+Free and open source (MIT). Example data on screen. Not sponsored.
+
+#claudecode #claudeai #aitools
+
+## Transcript
+
+[00:00] Claude can now job hunt for you, and it's completely free.
+[00:04] Its creator used it on 740 job listings, applied to just 68, and landed a job offer.
+[00:11] It's called career ops.
+[00:13] Free, open source, and over 82,000 stars on GitHub.
+[00:18] Here's how it works.
+[00:19] You give Claude your real CV and tell it what job you want.
+[00:23] It scans the job listings and scores everyone out of five – your experience, the pay,
+[00:28] and how well the role fits you.
+[00:30] Anything below four, Claude tells you to skip it.
+[00:34] That's how 740 listings turned into just 68 applications.
+[00:38] No more hours on the wrong jobs.
+[00:40] For the ones worth it, it tailors your CV, drafts your application answers, and even
+[00:46] writes a message to the recruiter that here's the best part – it never hits submit.
+[00:52] You read everything, and you send it yourself.
+[00:54] It worked.
+[00:56] 12 interviews from 68 applications and one job offer.
+[01:00] Comment, build, and I'll send you the link and the setup steps.

@@ -4,7 +4,7 @@ Status: `idea` → `building` → `built` → `installed` · or `killed` (with r
 Size: S (a prompt or a few steps) · M (needs scripts, connectors or a schedule) · L (multi-part or external APIs)
 Verdict: **BUILD** (custom skill worth making) · **INSTALL** (someone already built it) · **TOOL** (useful software, not a skill) · **SKIP** · **NEED INFO** (send the reel/caption)
 
-_Batch 1 triaged 2026-11-20._
+_Batch 1 triaged 2026-11-20. Batch 2 (15 reels through reel-intake, notes in `intake/<slug>/notes.md`) triaged 2026-11-24: it confirmed most of batch 1 from the actual reels and added #21–#25._
 
 ## Build: custom skills worth making
 
@@ -14,6 +14,7 @@ _Batch 1 triaged 2026-11-20._
 | 2 | `job-scout` | Every morning, Google-searches company career sites directly (Greenhouse, Lever, Ashby, Workday), scores each role against your resume and skips weak fits, then writes the top 10 to a Sheet with tailored bullets. Never submits anything. | career-ops (740 listings), Playwright new-grad reel, "8am search" reel | M | career-ops does the full version in Claude Code (see Install #6) | idea |
 | 3 | `reel-intake` | Downloads a reel with yt-dlp on your computer, transcribes it with Whisper, pulls key frames, and adds a backlog row. This would solve "Claude can't watch reels". | yt-dlp + Whisper from the open-source tools list | M | none | built; first run 2026-11-24 worked (2 reels, no cookies needed). The OneDrive rename lock (WinError 5) and the false "Instagram wants a login" hint were both fixed the same day. |
 | 4 | `meeting-notes` | Takes a transcript from Fathom, Granola, a phone recording or anything else and turns it into decisions, action items with owners, and a vault note. | Notetaker reel | S | none | idea |
+| 21 | `app-compliance-check` | Audits an app before launch: does the privacy policy match what the code actually collects (data, AI use, third parties); are storage buckets private and are "deleted" uploads really deleted; is cancelling as easy as signing up; do trials send reminders; are testimonials real; does any chatbot have a self-harm response. Outputs a fix list marked "not legal advice". | ["10 ways your app gets sued"](intake/aidan-murphy-comment-sued-to-get-sent-over-my-full/notes.md) | M | none | idea |
 
 ## Install: already built, just add it
 
@@ -23,6 +24,7 @@ _Batch 1 triaged 2026-11-20._
 | 6 | **career-ops** (santifer/career-ops, MIT) | The real system behind the 740-listings reel. It's a Claude Code repo, not a claude.ai skill. Use it if you want the full pipeline (tailored CV PDFs, tracker, dashboard); build #2 if you want something lighter that runs on a schedule. | idea |
 | 7 | **coreyhaines31/marketingskills** | A real, widely used marketing skill pack. Install selectively: `reverse-engineer-marketing`, `competitors`, `marketing-plan`, `copywriting`. Use it on Nelson Aeration competitors. **Verified from the [Jens Heitmann reel](intake/jens-heitmann-you-can-teach-claude-code-to-reverse/notes.md):** Agent Reach is real (`Panniantong/Agent-Reach`, ~114k stars; read/search X, Reddit, YouTube, GitHub through one CLI). Check what it installs before running it. The "marketing agent framework" is just his merge-and-rank prompt (paraphrased in the notes), not a repo. | idea |
 | 8 | **msitarzewski/agency-agents** (~147k stars, MIT) | Persona files for Claude Code. Take the reel's own advice and install one or two divisions, not all 270 files. For you: Reality Checker, plus whatever Marketing/Sales you'd actually use. Mostly overlaps `council`. | idea |
+| 22 | **christianjohnston-ai/honeypot** (MIT, new, 0 stars) | [Honeypot reel](intake/christian-comment-honeypot-for-the-free-claude-cod/notes.md). Sets up one decoy (fake key, doc, route or file) for your host using Canarytokens or OpenCanary, and only calls the job done once a test alert has reached you. Good for any app you deploy. It's brand new with no track record, so read SKILL.md before installing. | idea |
 
 ## Tools, not skills: useful software, nothing to build
 
@@ -33,13 +35,16 @@ _Batch 1 triaged 2026-11-20._
 | 11 | **Immich, Jellyfin, Anytype, AppFlowy, tldraw, Penpot, Bitwarden, CrowdSec, Fooocus** | Personal or home-lab tools (photos, media server, notes, whiteboard, design, passwords, security, image generation). Not skills. Bitwarden is the only one worth adopting regardless. |
 | 12 | **Fish Audio** | TTS and voice-cloning API. Could add voiceovers to `video-making` later; not a standalone skill. |
 | 13 | **Aseprite AI** | Pixel-art tooling. Low relevance; skip unless you start a game or pixel project. |
+| 23 | **Quad9 DNS, DeFlock, neko** ([OPSEC reel](intake/carter-perez-comment-opsec-and-ill-dm-you-all-the/notes.md)) | Quad9 (9.9.9.9) blocks malicious domains and is a free five-minute change worth making. DeFlock maps license-plate cameras (personal choice). neko is a self-hosted throwaway browser that needs Docker on a server. Note that changing DNS doesn't hide which sites you visit from your ISP. |
 
 ## Skip
 
 | # | Thing | Why |
 |---|-------|-----|
 | 14 | **RuFlow (= Ruflo, formerly claude-flow, by ruvnet)** | Real project, but heavy multi-agent orchestration. The reel's "75% cost cut" is marketing, and its own skills.sh page says not to use it for tasks a single agent can finish. Overkill for solo projects. Revisit only if you're running long multi-agent builds in Claude Code. |
-| 15 | **"Ripping" to get reel views** | If this means reposting other creators' clips, it's a copyright and account-strike risk. If it means something else, send the reel. |
+| 15 | **"Ripping" to get reel views** | [Reel seen](intake/ben-zogby-33-million-views-in-two-weeks/notes.md): an unnamed, gated tool that copies niche outlier videos, rewrites them and auto-posts up to 70 trial reels a week. Skip it: copyright, Instagram automation strikes and a spammy brand. The research half (find outliers, rewrite the *idea* for one specific customer) is worth folding into Enhanced.AI marketing, with a human approving each post. |
+| 24 | **"One scene, ten animation styles" prompts** | [Reel](intake/ylenia-fedi-comment-style-for-the-prompts/notes.md). The style list is in the notes and the prompts are gated. `video-making` covers this; at most add the list there. |
+| 25 | **10 Claude prompts for stock research** (image carousel) | [Notes](intake/day-trading-10-claude-prompts-for-stock-research/notes.md). Generic templates. Couldn't download the slides; screenshot them if you want them for FINAN 4030. |
 
 ## Need info: send the reel or caption
 

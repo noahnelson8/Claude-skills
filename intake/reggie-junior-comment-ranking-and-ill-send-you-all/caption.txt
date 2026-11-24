@@ -1,0 +1,13 @@
+Comment "RANKING" and I'll send you all five, with the one-line install for each 👇
+
+The 5 most installed Claude Code skills of all time (skills.sh leaderboard):
+
+5. Frontend Design by Anthropic (1.1M): your site stops looking like AI made it
+4. Grill Me by Matt Pocock (1.6M): grills you with questions until your plan has no holes
+3. HyperFrames by HeyGen (1.6M): ask for a video and Claude builds it with code
+2. Agent Browser by Vercel (1.6M): your AI opens the browser, clicks and fills out forms
+1. Find Skills by Vercel (4.4M): say the task, it finds the right skill for you
+
+Save this so you have all five when you need them.
+
+#claudecode #aitools #claudeskills #aiagents #vibecoding

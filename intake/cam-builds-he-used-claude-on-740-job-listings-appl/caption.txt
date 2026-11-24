@@ -1,0 +1,9 @@
+He used Claude on 740 job listings. Applied to 68. Got 12 interviews and a job offer.
+
+career-ops is free and open source. Claude scores every job out of 5 against your CV, tells you to skip the weak ones, and drafts your CV, answers and recruiter message for the good ones. It never hits submit: you do.
+
+Comment BUILD and I'll send you the link + the setup steps.
+
+Free and open source (MIT). Example data on screen. Not sponsored.
+
+#claudecode #claudeai #aitools

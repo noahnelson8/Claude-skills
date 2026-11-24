@@ -1,0 +1,8 @@
+Job market’s cooked, so my plan was a master’s at MIT. With a 2.7.
+
+Claude had a better plan: Playwright (free, from Microsoft) + one prompt. It finds new grad jobs posted this week on company career pages, matches them to my resume, puts the top 10 in a sheet and fills every application. Then it stops. I press Submit.
+
+Graduating soon? What’s your plan? 👇
+Comment AUTO and I’ll send you the copy-paste setup + the full prompt.
+
+#jobsearch #newgrad #claudeai #playwright #careertips

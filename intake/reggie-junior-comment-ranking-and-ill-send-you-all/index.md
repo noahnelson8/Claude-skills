@@ -1,0 +1,42 @@
+# Reggie Junior: Comment "RANKING" and I'll send you all five, with the one-line install for each
+
+- URL: https://www.instagram.com/reel/Df8Npd5maM3/
+- Posted: 20261119 · Duration: 42.0s · Views: None · Likes: 443
+- Contact sheet: sheet.jpg · Frames: 11 in frames/
+- Transcript: transcript.txt (en)
+
+## Caption
+
+Comment "RANKING" and I'll send you all five, with the one-line install for each 👇
+
+The 5 most installed Claude Code skills of all time (skills.sh leaderboard):
+
+5. Frontend Design by Anthropic (1.1M): your site stops looking like AI made it
+4. Grill Me by Matt Pocock (1.6M): grills you with questions until your plan has no holes
+3. HyperFrames by HeyGen (1.6M): ask for a video and Claude builds it with code
+2. Agent Browser by Vercel (1.6M): your AI opens the browser, clicks and fills out forms
+1. Find Skills by Vercel (4.4M): say the task, it finds the right skill for you
+
+Save this so you have all five when you need them.
+
+#claudecode #aitools #claudeskills #aiagents #vibecoding
+
+## Transcript
+
+[00:00] the five most installed cloud code skills of all time.
+[00:03] Number five, with 1.1 million installs.
+[00:06] Front-end design, made by Anthropik.
+[00:08] Your site stops looking like AI made it.
+[00:10] Number four, 1.6 million.
+[00:12] Grill me.
+[00:13] It grills you with questions until your plan has no holes.
+[00:16] Number three, 1.6 million.
+[00:18] Hyperframes.
+[00:19] You ask for a video and cloud builds the whole thing with code.
+[00:22] Number two, also 1.6 million.
+[00:24] Agent browser.
+[00:25] Your AI opens the browser by itself, clicks and fills out the forms.
+[00:29] And number one, with 4.4 million installs, find skills.
+[00:33] You save the task and it finds the right skill for you.
+[00:36] Save this so you have all five when you need them.
+[00:38] Just comment ranking and I'll send you all five.

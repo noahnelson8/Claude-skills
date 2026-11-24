@@ -1,0 +1,8 @@
+[00:00] So someone built an entire AI agency and open sourced it.
+[00:02] It's called the agency with over 124,000 stars on GitHub.
+[00:06] So this has a full roster of specialist agents, front-end designers, ad-writers, reddit community
+[00:09] wizards, each with its own personality and process.
+[00:12] It plugs straight into cloud code and there's even a desktop app that
+[00:14] installs your dream team in one click.
+[00:16] You just became an AI agency owner for free.
+[00:18] Call an agency and I'll send you the repo.
