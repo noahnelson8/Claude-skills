@@ -1,0 +1,9 @@
+You can teach Claude Code to reverse engineer any company’s marketing strategy with this three-system setup.
+
+Install coreyhaines31/marketingskills and run the reverse-engineer-marketing skill to log a competitor’s dated moves against their traffic. Give Claude Code Agent Reach so it can read their posts, comments, Reddit threads and YouTube transcripts. Feed both into the marketing agent framework. It keeps only the plays their audience actually responded to and ranks them by what you can ship this month. Claude Code gets the top three as build tasks.
+
+If you’re the human: share this reel to Claude Code and watch it build.
+
+Comment “REM” for my full step-by-step guide.
+
+#claudecode #claude #ai #aiagents #aitools

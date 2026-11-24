@@ -1,0 +1,7 @@
+[
+  {
+    "input": "https://www.instagram.com/reel/DfCxRQ8uRli/",
+    "ok": false,
+    "error": "[WinError 5] Access is denied: 'C:\\\\Users\\\\nwnel\\\\OneDrive\\\\claude-skills\\\\intake\\\\.tmp-20261124-083401' -> 'C:\\\\Users\\\\nwnel\\\\OneDrive\\\\claude-skills\\\\intake\\\\morenicksaraev-motionsites-is-a-free-open-source-s' -> Instagram wants a login. Retry with --cookies-from-browser firefox or --cookies cookies.txt"
+  }
+]
