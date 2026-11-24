@@ -1,12 +1,22 @@
 # 10 Claude prompts for stock research (image carousel)
 **Source:** "Day Trading" (@artificialintelligenceee) · https://www.instagram.com/p/DZ9dQzQEUb8/ · 2026-06-24
 
-**What it actually shows:** An image carousel, not a reel. The script couldn't download it ("No video formats found" on the carousel's image slides), so I only have the caption. That says it holds 10 prompt frameworks for company valuation, portfolio risk, competitive analysis, market trends and macro factors.
+**What it actually shows:** 12 slides (re-read after the carousel fix). 10 "act as a ___ at a famous firm" prompt templates, each with a bullet list of outputs and a [fill in your details] slot:
+1. Goldman stock screener
+2. Morgan Stanley DCF valuation (revenue projection, FCF, WACC, terminal value, sensitivity table, verdict)
+3. Bridgewater portfolio risk
+4. JPMorgan earnings preview
+5. BlackRock portfolio construction
+6. Citadel technical analysis
+7. Harvard-endowment dividend portfolio
+8. Bain competitive analysis
+9. Renaissance "pattern finder"
+10. McKinsey macro impact
 
-**Named things to verify:** None named. The prompt text is on the slides, which I couldn't read.
+The last slide is a newsletter ad.
 
-**Engagement bait?** It's a follow-for-more account, with no comment ask.
+**Named things to verify:** The firm names are just personas; none of them are involved. The big catch is that Claude doesn't have live prices, filings or options data unless you give them to it or it can search. Asked cold, it will invent P/E ratios, price targets and "insider buying". Every number needs a source.
 
-**Verdict:** SKIP. Generic prompt templates; Claude does this well from a plain request. If you want it for FINAN 4030, screenshot the slides and drop them in this folder.
+**Engagement bait?** Mild (newsletter ad). The prompts are fully on the slides.
 
-**Script note:** reel-intake fails on image carousels even though `ignore_no_formats_error` is set. The error comes from the carousel's child items. Small fix for later: catch it and save the caption plus the slide images.
+**Verdict:** SKIP as a skill. The one worth keeping is #2, the DCF outline, as a study aid for FINAN 4030: give Claude a real 10-K and have it walk through the DCF steps. That's learning valuation, not stock tips. Not investment advice.

@@ -111,10 +111,25 @@ def download(url: str, workdir: Path, ffmpeg: str, cookies: str | None, cookies_
     if cookies_browser:
         opts["cookiesfrombrowser"] = (cookies_browser,)
 
-    with yt_dlp.YoutubeDL(opts) as ydl:
-        info = ydl.extract_info(url, download=True)
-        if info and info.get("_type") == "playlist" and info.get("entries"):
-            info = next(e for e in info["entries"] if e)  # carousel: take first item
+    try:
+        with yt_dlp.YoutubeDL(opts) as ydl:
+            info = ydl.extract_info(url, download=True)
+    except yt_dlp.utils.DownloadError as e:
+        if "no video formats" not in str(e).lower() and "format is not available" not in str(e).lower():
+            raise
+        # Image post or photo carousel: skip the video, but save every slide image (thumbnail per entry).
+        for p in workdir.iterdir():
+            if p.is_file():
+                p.unlink()
+        img_opts = {**opts, "skip_download": True, "outtmpl": str(workdir / "slide%(playlist_index|1)02d.%(ext)s")}
+        with yt_dlp.YoutubeDL(img_opts) as ydl:
+            info = ydl.extract_info(url, download=True)
+
+    if info and info.get("_type") == "playlist" and info.get("entries"):
+        entries = [e for e in info["entries"] if e]
+        first = dict(entries[0]) if entries else {}
+        first.setdefault("description", info.get("description"))
+        info = first  # carousel: metadata from the first item
 
     video = next((p for p in workdir.glob("video.*") if p.suffix.lower() in {".mp4", ".mkv", ".webm", ".mov"}), None)
     return info or {}, video
@@ -256,10 +271,21 @@ def process(item: str, args, ffmpeg: str) -> dict:
                 except Exception as e:  # keep frames + caption even if speech-to-text fails
                     t_err = f"failed: {e}"
         else:
-            t_err = "no video (image post?)"
-            thumbs = [p for p in dest.glob("video.*") if p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}]
-            if thumbs:
-                thumbs[0].rename(dest / f"image{thumbs[0].suffix}")
+            t_err = "no video (image post or carousel)"
+            img_ext = {".jpg", ".jpeg", ".png", ".webp"}
+            slides = sorted(p for p in dest.glob("slide*.*") if p.suffix.lower() in img_ext)
+            slides += [p for p in dest.glob("video.*") if p.suffix.lower() in img_ext]
+            if slides:
+                fdir = dest / "frames"
+                fdir.mkdir(exist_ok=True)
+                for i, s in enumerate(slides, 1):
+                    out = fdir / f"{i:02d}_slide.jpg"
+                    res = run([ffmpeg, "-hide_banner", "-loglevel", "error", "-y", "-i", str(s),
+                               "-vf", "scale='min(1080,iw)':-2", "-q:v", "3", str(out)])
+                    if out.exists():
+                        frames.append(out)
+                        s.unlink(missing_ok=True)
+                sheet_ok = contact_sheet(ffmpeg, frames, dest / "sheet.jpg")
 
         (dest / "transcript.txt").write_text(transcript or f"(no transcript: {t_err})", encoding="utf-8")
         meta.update({"language": lang, "frames": len(frames), "transcript_note": t_err})

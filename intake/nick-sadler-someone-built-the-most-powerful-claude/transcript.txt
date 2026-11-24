@@ -1,0 +1,19 @@
+[00:00] Someone just built the most powerful Claude tool on the planet.
+[00:03] 60 agents working together simultaneously,
+[00:06] all getting smarter every single run.
+[00:09] It's called RooFlow, formerly ClaudeFlow,
+[00:12] and this thing is insane.
+[00:14] One agent handles planning, another writes code,
+[00:16] another runs tests, another checks security,
+[00:19] all running in parallel, all sharing memory,
+[00:21] all improving from each other after every single run.
+[00:24] But here's the part that blew my mind.
+[00:26] It slashes your Claude API costs by 75%.
+[00:31] Basic tasks root to a free tier automatically,
+[00:33] advanced tasks root to the optimal model.
+[00:36] Your Claude subscription just became 2.5 times more powerful.
+[00:39] Ranked number one in agent frameworks on GitHub,
+[00:42] over 14,000 stars, 100% open source free,
+[00:45] zero additional subscriptions, maximum intelligence.
+[00:48] Just type flow and I'll send you the direct link
+[00:50] and follow for more videos.

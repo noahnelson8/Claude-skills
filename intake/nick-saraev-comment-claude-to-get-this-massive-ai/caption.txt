@@ -1,0 +1,31 @@
+Comment "CLAUDE" to get this Massive AI Skills Library for Claude, Codex and other AI Tools. 
+
+If you're using Claude Code but not using Skills, you're basically missing out on 90% of its power.
+
+Skills are like superpowers for your AI. Instead of writing the same long prompts over and over, you install a skill once and your AI becomes an expert at that task forever.
+
+Think of it like hiring a specialist instead of training a generalist every single time. Massive time saver.
+
+And just now, a huge new library called skills.sh by Vercel just dropped. 
+
+It has over 100,000 pre-made Claude skills you can install and use instantly, completely free.
+
+These skills turn Claude into a specialist for whatever task you have. 
+
+UI design, app testing, SEO research, lead generation, content writing, and a lot more.
+
+Each one comes with proven instructions baked in. So you skip the trial-and-error phase entirely.
+
+The best part? You can also run them inside OpenClaw, Antigravity, Codex, and basically every AI code editor out there. 
+
+Not just Claude Code.
+
+That means one skill works across your entire toolkit. No re-learning, no rewriting, no platform lock-in.
+
+Setup takes about 30 seconds. You just select the skill you want, copy its command, paste it in your terminal, and choose your AI agent.
+
+Your new skill is ready to use immediately. No restart, no config files, no API setup.
+
+For agency owners, indie devs, and anyone building with AI agents, this changes the whole workflow.
+
+#claudeskills #claudecode #claudeai #skillssh #aiskills

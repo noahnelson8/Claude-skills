@@ -1,0 +1,24 @@
+[00:00] If you're using cloud code, but not using skills,
+[00:02] you're basically missing out on 90% of the fun.
+[00:04] Skills are like superpowers for AI.
+[00:06] So instead of writing the same long prompts
+[00:07] over and over again, you just install a skill once
+[00:10] and then your AI becomes an expert at that task forever.
+[00:12] A massive new library just dropped
+[00:14] that is over 1,000 pre-made cloud skills
+[00:16] that you can install and use instantly
+[00:18] for completely free.
+[00:19] These skills turn cloud into a specialist
+[00:21] for whatever task you have,
+[00:22] like UI design, app testing, SEO,
+[00:25] content writing, and much more.
+[00:26] And the best part, you can also run them
+[00:28] inside of anti-gravity, Codex, the cloud desktop app,
+[00:31] and basically any AI code editor out there.
+[00:33] Just select the skill you want, copy its command,
+[00:36] paste it into your terminal, choose your AI agent,
+[00:38] and that's it.
+[00:39] Your new skill is ready to use.
+[00:41] So go try it yourself.
+[00:42] Just comment cloud down below
+[00:43] and I'll send you the link directly.
