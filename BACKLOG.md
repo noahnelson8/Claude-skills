@@ -54,9 +54,9 @@ _Batch 1 triaged 2026-11-20. Batch 2 (15 reels through reel-intake, notes in `in
 | # | Idea | What's missing |
 |---|------|----------------|
 | 16 | ~~"Learn anything 100x faster with Claude"~~ | **Resolved 2026-11-24:** it was a 6-prompt study carousel; see Build #26. |
-| 17 | AI Agentic Flywheel concept | What the loop actually was. |
-| 18 | Hermes AI agents | Which Hermes (Nous Research's Hermes Agent, or something else)? |
-| 19 | Claude Code "Code Mode" | What it did; possibly MCP "code mode" (the agent calls tools by writing code). |
+| 17 | ~~AI Agentic Flywheel concept~~ | **Resolved 2026-11-24 (heard, not a reel):** a buzzword, not a product. It means a loop where agents act, the results get logged and evaluated, and the lessons feed back to improve the next run. NVIDIA calls the same thing a "data flywheel". Not a build on its own; use it as a rule for every skill here: log each run, and review and improve the SKILL.md every month or so. |
+| 18 | ~~Hermes AI agents~~ | **Resolved 2026-11-24:** Nous Research's **Hermes Agent** (`NousResearch/hermes-agent`, MIT, ~266k stars). An always-on personal agent you chat with on Telegram, Discord, Slack, WhatsApp or email. It has persistent memory, writes its own skills (same SKILL.md format), and runs scheduled jobs. Bring your own model (OpenRouter, OpenAI, Nous Portal from $20/month), so usage costs extra beyond your Claude plan. You already have most of this (Claude Code, scheduled tasks, memory, the vault); try it only if you want to message an agent from your phone. → TOOL. |
+| 19 | ~~Claude Code "Code Mode"~~ | **Resolved 2026-11-24:** "Code Mode" is Cloudflare's name for a way to use MCP: instead of feeding the model dozens of tool definitions, you give it a typed code API and it writes a short script that calls the tools. Anthropic published the same idea ("code execution with MCP"). Cloudflare's own MCP covers 2,500+ API endpoints in about 1,000 tokens. Not a skill to install; it's a design pattern. It's most relevant to the **SPINE MCP platform, which is work (noahn-beep repo)**, if SPINE exposes many tools. → Idea for the work repo, not this one. |
 | 20 | Building your own / physical AI notetaker | As a product, this is an app idea for the startup search, not a skill. The skill version is #4. |
 
 ## Notes per idea
