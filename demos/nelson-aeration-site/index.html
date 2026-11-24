@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nelson Aeration · Core lawn aeration</title>
+<meta name="description" content="Core aeration that lets your lawn breathe, drink and grow. See the signs, how it works and when to book, then book aeration with Nelson Aeration.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;650;800&display=swap" rel="stylesheet">
+<style>
+  html, body { background: #f3f2ec; margin: 0; }
+  :root {
+    --paper: #f3f2ec; --paper-2: #ebe9e0; --card: #fbfaf6;
+    --ink: #17291e; --ink-soft: #3b4a40; --muted: #5d6a60;
+    --rule: #c9cbbf; --accent: #2f6b3f; --accent-soft: #dfe8d9; --soil: #6b4f3a; --soil-2: #8a6a50;
+    --fs: min(19.6vh, 13.2vw);
+    --ease-reveal: cubic-bezier(.25,.1,.25,1);
+    --wrap: min(1160px, calc(100vw - 2 * clamp(20px, 4vw, 56px)));
+  }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: var(--wrap); margin: 0 auto; }
+
+  /* ---------- buttons ---------- */
+  .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px;
+         background: var(--ink); color: #fff; text-decoration: none; font-weight: 550; font-size: 16px;
+         transition: transform .2s ease, background-color .2s ease; }
+  .btn:hover { transform: translateY(-2px); background: var(--accent); }
+  .btn svg { width: 16px; height: 16px; }
+  .btn--light { background: #fff; color: var(--ink); }
+  .btn--light:hover { background: var(--accent-soft); }
+  .link-cta { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 550; text-decoration: none; border-bottom: 1.5px solid currentColor; }
+
+  /* ---------- floating pill nav (appears after the hero) ---------- */
+  .pillnav { position: fixed; z-index: 20; top: 14px; left: 50%; display: flex; align-items: center; gap: 22px;
+             padding: 8px 8px 8px 20px; border-radius: 999px; background: rgba(251,250,246,.82);
+             backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+             box-shadow: 0 1px 0 rgba(23,41,30,.06), 0 8px 28px -12px rgba(23,41,30,.25);
+             transform: translate(-50%, -140%); transition: transform .5s cubic-bezier(.2,.8,.2,1); font-size: 14px; }
+  .pillnav.show { transform: translate(-50%, 0); }
+  .pillnav .brand { font-weight: 650; text-decoration: none; white-space: nowrap; }
+  .pillnav nav { display: flex; gap: 18px; }
+  .pillnav nav a { text-decoration: none; color: var(--ink-soft); padding: 10px 0; }
+  .pillnav nav a:hover { color: var(--ink); }
+  .pillnav .btn { min-height: 40px; padding: 0 18px; font-size: 14px; }
+
+  /* ---------- hero (Wild Pil reveal) ---------- */
+  .stage { position: relative; min-height: 100vh; min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto; background: #fff; }
+  .bg { position: absolute; inset: 0; background: var(--paper); opacity: 0; pointer-events: none; }
+  .bg svg { width: 100%; height: 100%; display: block; }
+  .topnav { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center;
+            padding: 18px clamp(20px, 3.2vw, 44px); font-size: max(13px, calc(var(--fs) * .072)); font-weight: 450; transform: translateY(-140%); }
+  .topnav .brand { font-weight: 650; text-decoration: none; }
+  .topnav .link-cta { font-weight: 450; border-bottom-width: 1px; }
+  .hero { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  h1.word { margin: 0; font-size: var(--fs); font-weight: 800; letter-spacing: -.045em; line-height: .8;
+            display: flex; align-items: center; gap: .026em; transform: translateY(-7%); }
+  .pill { position: relative; height: 1.81em; width: .012em; border-radius: 999px; overflow: hidden; background: #d6dccf; clip-path: inset(50% 0); flex: none; }
+  .pill video { position: absolute; top: 0; left: 50%; height: 100%; min-width: 4.2em; width: 100%; transform: translateX(-50%); object-fit: cover; object-position: center top; }
+  .pill .line { position: absolute; inset: 0; background: #b5b9ae; }
+  .tag { margin: calc(var(--fs) * .02) 0 0; font-size: clamp(17px, calc(var(--fs) * .14), 26px); font-weight: 500; letter-spacing: -.01em; text-align: center; text-wrap: balance; }
+  .foot { position: relative; z-index: 2; display: flex; align-items: flex-end; gap: clamp(16px, 2vw, 28px);
+          padding: 0 clamp(20px, 3.2vw, 44px) clamp(20px, 3vw, 36px); transform: translateY(160%); }
+  .foot p { margin: 0; width: calc(var(--fs) * 1.6); max-width: 440px; font-size: max(14px, calc(var(--fs) * .07)); line-height: 1.45; color: var(--ink-soft); }
+  .foot p::first-letter { float: left; font-size: 2.35em; line-height: .9; font-weight: 650; margin: .06em .08em 0 0; color: var(--ink); }
+  .foot .rule { flex: 1; height: 1px; background: #a7ab9f; transform: scaleX(0); margin-bottom: 26px; }
+
+  /* ---------- sections ---------- */
+  section.block { padding: clamp(80px, 11vw, 150px) 0; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 550; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  .eyebrow::before { content: ""; width: 22px; height: 1.5px; background: currentColor; }
+  h2 { margin: 0; font-size: clamp(34px, 5.2vw, 64px); font-weight: 650; letter-spacing: -.035em; line-height: 1.02; text-wrap: balance; }
+  .lede { margin: 20px 0 0; max-width: 560px; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; color: var(--ink-soft); }
+  .head { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: end; margin-bottom: clamp(40px, 6vw, 72px); }
+  .head .lede { margin: 0; justify-self: end; }
+
+  /* signs */
+  .signs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; list-style: none; padding: 0; margin: 0; }
+  .sign { background: var(--card); border: 1px solid #e3e1d7; border-radius: 22px; padding: 26px 24px 28px; min-height: 230px; display: flex; flex-direction: column; }
+  .sign svg { width: 44px; height: 44px; color: var(--accent); margin-bottom: auto; }
+  .sign h3 { margin: 28px 0 8px; font-size: 19px; font-weight: 650; letter-spacing: -.015em; }
+  .sign p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+  .mini-cta { margin-top: 36px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; color: var(--ink-soft); font-size: 15px; }
+
+  /* how it works: soil diagram + steps */
+  .how { background: var(--ink); color: #eef2ea; border-radius: clamp(24px, 3vw, 40px); width: min(1360px, calc(100vw - 2 * clamp(10px, 2vw, 28px))); margin: 0 auto; }
+  .how .eyebrow { color: #a9d3a2; }
+  .how .lede { color: #c6d1c4; }
+  .how-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .soil { width: 100%; height: auto; display: block; border-radius: 22px; background: #0f1d15; }
+  .soil .plug { transform-box: fill-box; transform-origin: 50% 100%; }
+  .soil .arrow path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .js .soil.drawn .arrow path { transition: stroke-dashoffset 1.1s var(--ease-reveal); stroke-dashoffset: 0; }
+  .js .soil .plug { transform: translateY(0); }
+  .js .soil.drawn .plug { transition: transform .9s cubic-bezier(.2,.8,.2,1); transform: translate(44px, -62px); }
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid rgba(238,242,234,.14); }
+  .steps li:last-child { border-bottom: 1px solid rgba(238,242,234,.14); }
+  .steps li::before { content: counter(s, decimal-leading-zero); font-size: 14px; font-weight: 650; color: #a9d3a2; padding-top: 3px; }
+  .steps h3 { margin: 0 0 6px; font-size: 19px; font-weight: 650; letter-spacing: -.015em; color: #fff; }
+  .steps p { margin: 0; font-size: 15.5px; line-height: 1.55; color: #c6d1c4; }
+
+  /* when to book */
+  .seasons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .season { position: relative; overflow: hidden; border-radius: 26px; padding: clamp(28px, 3.5vw, 44px); min-height: 300px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .season--cool { background: linear-gradient(160deg, #dfe8d9 0%, #c9dccb 100%); }
+  .season--warm { background: linear-gradient(160deg, #efe6cf 0%, #e3d3a8 100%); }
+  .season .when { font-size: clamp(28px, 3.4vw, 42px); font-weight: 650; letter-spacing: -.03em; line-height: 1.05; margin: 0 0 12px; }
+  .season h3 { margin: 0 0 10px; font-size: 14px; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); order: -1; margin-bottom: auto; }
+  .season p { margin: 0; max-width: 420px; font-size: 16px; line-height: 1.55; color: var(--ink-soft); }
+  .season svg { position: absolute; right: -20px; top: -20px; width: 180px; height: 180px; opacity: .35; color: var(--ink); pointer-events: none; }
+  .season > :not(svg) { position: relative; z-index: 1; }
+  .note { margin: 22px 0 0; font-size: 15px; color: var(--muted); }
+
+  /* the day */
+  .day { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); }
+  .list-card { background: var(--card); border: 1px solid #e3e1d7; border-radius: 26px; padding: clamp(26px, 3.5vw, 40px); }
+  .list-card h3 { margin: 0 0 18px; font-size: 22px; font-weight: 650; letter-spacing: -.02em; }
+  .check { list-style: none; margin: 0; padding: 0; }
+  .check li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; padding: 13px 0; border-top: 1px solid #ebe9e0; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
+  .check li:first-child { border-top: 0; }
+  .check svg { width: 22px; height: 22px; color: var(--accent); margin-top: 1px; }
+  .check b { color: var(--ink); font-weight: 600; }
+
+  /* faq */
+  .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .faq details { border-top: 1px solid var(--rule); }
+  .faq details:last-child { border-bottom: 1px solid var(--rule); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; min-height: 44px; font-size: 18px; font-weight: 550; letter-spacing: -.01em; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .pm { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--rule); display: grid; place-items: center; transition: transform .3s ease, background-color .3s ease; }
+  .faq summary .pm svg { width: 12px; height: 12px; }
+  .faq details[open] summary .pm { transform: rotate(45deg); background: var(--accent-soft); }
+  .faq details p { margin: 0 0 22px; max-width: 620px; font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
+
+  /* final cta */
+  .final { padding: 0 0 clamp(20px, 3vw, 28px); }
+  .final-card { width: min(1360px, calc(100vw - 2 * clamp(10px, 2vw, 28px))); margin: 0 auto; border-radius: clamp(24px, 3vw, 40px);
+                background: radial-gradient(120% 140% at 85% 0%, #3c7a4b 0%, #1d3a28 45%, #17291e 100%); color: #fff;
+                padding: clamp(64px, 9vw, 130px) clamp(24px, 6vw, 96px); text-align: center; position: relative; overflow: hidden; }
+  .final-card h2 { color: #fff; max-width: 14ch; margin: 0 auto; }
+  .final-card p { margin: 22px auto 34px; max-width: 520px; font-size: 18px; line-height: 1.55; color: #cfdccc; }
+  .final-card .grass { position: absolute; left: 0; right: 0; bottom: -2px; width: 100%; height: 90px; color: rgba(169,211,162,.16); }
+
+  footer.site { padding: 36px 0 44px; font-size: 14px; color: var(--muted); }
+  footer.site .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  footer.site nav { display: flex; gap: 22px; }
+  footer.site a { text-decoration: none; padding: 10px 0; }
+  footer.site a:hover { color: var(--ink); }
+
+  /* reveal (MotionSites: viewport-triggered staggered reveal) */
+  .js [data-reveal] { opacity: 0; transform: translate3d(0, var(--y, 30px), 0);
+                      transition: opacity var(--dur, .7s) var(--ease-reveal) var(--d, 0s), transform var(--dur, .7s) var(--ease-reveal) var(--d, 0s); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+  /* ---------- phone ---------- */
+  @media (max-width: 900px) {
+    .pillnav nav { display: none; }
+    .head, .how-grid, .faq-grid, .day, .seasons { grid-template-columns: 1fr; }
+    .head .lede { justify-self: start; }
+    .signs { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    :root { --fs: min(34vw, 16.5vh); }
+    .topnav { font-size: 13px; padding: 16px 20px; }
+    h1.word { flex-direction: column; gap: .03em; transform: none; }
+    .pill { width: calc(100vw - 40px); height: 1.5px; clip-path: inset(0 50%); }
+    .pill video { min-width: 0; width: 100%; height: calc((100vw - 40px) / 1.85); }
+    .tag { margin-top: 18px; padding: 0 20px; font-size: 17px; }
+    .foot { flex-wrap: wrap; padding: 0 20px 22px; }
+    .foot p { width: 100%; max-width: none; font-size: 14.5px; line-height: 1.5; }
+    .signs { grid-template-columns: 1fr; }
+    .sign { min-height: 0; }
+    .season { min-height: 240px; padding-top: 96px; }
+    .season svg { width: 96px; height: 96px; right: 14px; top: 14px; opacity: .3; }
+    .pillnav { gap: 12px; padding-left: 16px; }
+  }
+
+  /* ---------- reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .bg { opacity: 1; } .topnav, .foot { transform: none; } .foot .rule { transform: none; }
+    .pill { clip-path: none; width: 3.62em; } .pill .line { opacity: 0; } h1.word { gap: .085em; }
+    .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+    .soil .arrow path { stroke-dashoffset: 0; } .js .soil .plug { transform: translate(44px, -62px); }
+    .pillnav { transition: none; }
+  }
+  @media (prefers-reduced-motion: reduce) and (max-width: 720px) {
+    .pill { width: calc(100vw - 40px); height: calc((100vw - 40px) / 1.85); } h1.word { gap: .1em; }
+  }
+</style>
+</head>
+<body>
+
+<!-- floating pill nav -->
+<div class="pillnav" aria-hidden="true" id="pillnav">
+  <a class="brand" href="#top" tabindex="-1">Nelson Aeration</a>
+  <nav aria-label="Sections"><a href="#signs" tabindex="-1">Signs</a><a href="#how" tabindex="-1">How it works</a><a href="#when" tabindex="-1">When</a><a href="#faq" tabindex="-1">FAQ</a></nav>
+  <a class="btn" href="#book" tabindex="-1">Book aeration</a>
+</div>
+
+<!-- hero -->
+<header class="stage" id="top">
+  <div class="bg" aria-hidden="true"><svg viewBox="0 0 1440 960" preserveAspectRatio="none" fill="none" stroke="#fff" stroke-linecap="round"></svg></div>
+  <div class="topnav">
+    <a class="brand" href="#top">Nelson Aeration</a>
+    <a class="link-cta" href="#book">Book aeration</a>
+  </div>
+  <div class="hero">
+    <h1 class="word" aria-label="Grow. Core lawn aeration by Nelson Aeration">
+      <span aria-hidden="true">GR</span>
+      <span class="pill" aria-hidden="true">
+        <video muted loop playsinline preload="auto"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261029_084140_0b1278a9-189f-4d9e-9a36-00f6a21e4788.mp4"></video>
+        <span class="line"></span>
+      </span>
+      <span aria-hidden="true">OW</span>
+    </h1>
+    <p class="tag">Core lawn aeration for thicker, healthier grass.</p>
+  </div>
+  <div class="foot">
+    <p>Soil packs down a little more every season. Aeration pulls small plugs so air, water and nutrients reach the roots again. Best in spring or fall.</p>
+    <span class="rule" aria-hidden="true"></span>
+    <a class="btn" href="#book">Book aeration <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</header>
+
+<main>
+  <!-- 1. problem: signs -->
+  <section class="block" id="signs" aria-labelledby="signs-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow" data-reveal>Why aerate</p>
+          <h2 id="signs-h" data-reveal style="--y:40px; --d:.08s">Your lawn might be holding its breath.</h2>
+        </div>
+        <p class="lede" data-reveal style="--d:.16s">Feet, mowers and rain press the soil tighter every year. Roots run out of room, water runs off instead of soaking in, and feeding the lawn does less than it should. Here's how to tell.</p>
+      </div>
+      <ul class="signs" data-stagger="110">
+        <li class="sign" data-reveal>
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 6c-6 9-10 14-10 19a10 10 0 0 0 20 0c0-5-4-10-10-19z"/><path d="M6 38c5-2 9 2 16 0s11 2 16 0"/></svg>
+          <h3>Water puddles or runs off</h3><p>After rain or sprinklers, water sits on top or runs down the driveway instead of soaking in.</p>
+        </li>
+        <li class="sign" data-reveal>
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 36V24M14 36V18M20 36V26M26 36V30M32 36V22M38 36V32"/><path d="M4 36h38"/></svg>
+          <h3>Thin, patchy grass</h3><p>Bare or weak spots, especially along paths, play areas and where the dog runs.</p>
+        </li>
+        <li class="sign" data-reveal>
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 6l8 8-14 14-8-8z"/><path d="M16 20L6 38"/><path d="M4 40h20"/></svg>
+          <h3>Hard, packed soil</h3><p>A screwdriver is hard to push into the lawn after a good watering. That's compaction.</p>
+        </li>
+        <li class="sign" data-reveal>
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="22" cy="22" r="15"/><path d="M22 13v9l6 4"/></svg>
+          <h3>Tired despite the care</h3><p>You water and feed it, but it still looks dull and never quite fills in.</p>
+        </li>
+      </ul>
+      <div class="mini-cta" data-reveal><span>Sound familiar?</span><a class="link-cta" href="#book">Book aeration</a></div>
+    </div>
+  </section>
+
+  <!-- 2. solution: how it works -->
+  <section class="block how" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow" data-reveal>How it works</p>
+          <h2 id="how-h" data-reveal style="--y:40px; --d:.08s">Small plugs out. Air, water and roots in.</h2>
+        </div>
+        <p class="lede" data-reveal style="--d:.16s">Core aeration uses a machine that pulls finger-sized plugs of soil out of the lawn and leaves them on top. The holes give the roots room to breathe, drink and spread.</p>
+      </div>
+      <div class="how-grid">
+        <svg class="soil" id="soil" viewBox="0 0 640 420" role="img" aria-label="Cross-section of a lawn: plugs of soil lifted out, with air, water and nutrients flowing down into the holes toward the roots">
+          <defs>
+            <linearGradient id="dirt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6a50"/><stop offset="1" stop-color="#5a4130"/></linearGradient>
+            <pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.2" fill="#4a3426" opacity=".5"/><circle cx="10" cy="10" r="1" fill="#a7856a" opacity=".5"/></pattern>
+          </defs>
+          <rect x="0" y="150" width="640" height="270" fill="url(#dirt)"/>
+          <rect x="0" y="150" width="640" height="270" fill="url(#grain)"/>
+          <!-- grass line -->
+          <path d="M0 150 h640" stroke="#4f9a5b" stroke-width="10"/>
+          <g stroke="#6fbf74" stroke-width="2.4" stroke-linecap="round">
+            <path d="M20 148 l-4 -20 M34 148 l3 -24 M58 148 l-5 -18 M80 148 l2 -22 M200 148 l-3 -20 M222 148 l4 -26 M246 148 l-2 -18 M360 148 l-4 -22 M384 148 l3 -20 M512 148 l-3 -24 M536 148 l4 -18 M600 148 l-2 -22 M622 148 l3 -20"/>
+          </g>
+          <!-- roots -->
+          <g stroke="#e9dcc6" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".75">
+            <path d="M40 160 c-6 40 10 70 -2 110 M46 160 c14 30 4 60 22 90"/>
+            <path d="M230 160 c-10 50 8 80 -4 120 M238 160 c16 40 2 70 20 110"/>
+            <path d="M392 160 c-8 46 12 70 0 112 M400 160 c14 34 4 66 24 100"/>
+            <path d="M560 160 c-8 44 10 76 -2 116 M568 160 c14 36 4 64 22 96"/>
+          </g>
+          <!-- holes -->
+          <g fill="#2a1c13">
+            <rect x="128" y="150" width="34" height="96" rx="17"/>
+            <rect x="300" y="150" width="34" height="96" rx="17"/>
+            <rect x="460" y="150" width="34" height="96" rx="17"/>
+          </g>
+          <!-- plugs lifting out -->
+          <g fill="#7b5b43" stroke="#4f9a5b" stroke-width="0">
+            <rect class="plug" x="128" y="150" width="34" height="62" rx="17"/>
+            <rect class="plug" x="300" y="150" width="34" height="62" rx="17"/>
+            <rect class="plug" x="460" y="150" width="34" height="62" rx="17"/>
+          </g>
+          <!-- flows into holes -->
+          <g class="arrow" fill="none" stroke-linecap="round" stroke-width="3">
+            <path pathLength="1" d="M110 40 C 120 80, 140 110, 145 230" stroke="#bfe3ff"/>
+            <path pathLength="1" d="M318 30 C 300 80, 320 120, 317 230" stroke="#a9d3a2"/>
+            <path pathLength="1" d="M510 40 C 500 90, 480 120, 477 230" stroke="#f1d98a"/>
+          </g>
+          <g font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600">
+            <text x="60" y="30" fill="#bfe3ff">Air</text>
+            <text x="300" y="22" fill="#a9d3a2">Water</text>
+            <text x="470" y="30" fill="#f1d98a">Nutrients</text>
+            <text x="24" y="400" fill="#e9dcc6" font-weight="500" font-size="13">Roots spread into the loosened soil</text>
+          </g>
+        </svg>
+        <ol class="steps" data-stagger="120">
+          <li data-reveal><div><h3>Book a visit</h3><p>Pick a time that suits you this season. One button, a short form.</p></div></li>
+          <li data-reveal><div><h3>We pull the plugs</h3><p>A core aerator works across the lawn in passes, lifting small plugs of soil and leaving them on the surface.</p></div></li>
+          <li data-reveal><div><h3>Leave the plugs, water the lawn</h3><p>The plugs break down by themselves with rain and mowing, feeding the soil as they go.</p></div></li>
+          <li data-reveal><div><h3>Watch it fill in</h3><p>With room to breathe, the grass roots deeper and thicker. It's also the best moment to overseed.</p></div></li>
+        </ol>
+      </div>
+      <div class="mini-cta" data-reveal style="color:#c6d1c4"><span>Ready for a lawn that can breathe?</span><a class="link-cta" href="#book" style="color:#fff">Book aeration</a></div>
+    </div>
+  </section>
+
+  <!-- 3. when to book -->
+  <section class="block" id="when" aria-labelledby="when-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow" data-reveal>When to book</p>
+          <h2 id="when-h" data-reveal style="--y:40px; --d:.08s">Aerate while your grass is growing.</h2>
+        </div>
+        <p class="lede" data-reveal style="--d:.16s">Grass heals and fills the holes fastest in its own growing season. Skip times when the ground is frozen, waterlogged or bone-dry in a drought.</p>
+      </div>
+      <div class="seasons" data-stagger="120">
+        <article class="season season--cool" data-reveal>
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M50 10c-18 20-24 36-24 48a24 24 0 0 0 48 0c0-12-6-28-24-48z"/><path d="M50 90V40M50 60l-12-10M50 72l12-10"/></svg>
+          <h3>Cool-season grasses</h3>
+          <p class="when">Early fall, or spring</p>
+          <p>Kentucky bluegrass, fescues and ryegrass, the usual lawns in cooler, northern climates. Fall is the favourite: warm soil, cool air, and less weed competition.</p>
+        </article>
+        <article class="season season--warm" data-reveal>
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="50" cy="50" r="16"/><path d="M50 14v10M50 76v10M14 50h10M76 50h10M24 24l7 7M69 69l7 7M24 76l7-7M69 31l7-7"/></svg>
+          <h3>Warm-season grasses</h3>
+          <p class="when">Late spring to early summer</p>
+          <p>Bermuda, zoysia and St. Augustine, common in warmer, southern climates. Aerate once the lawn has fully greened up and is growing strongly.</p>
+        </article>
+      </div>
+      <p class="note" data-reveal>Not sure which grass you have? Mention it when you book and we'll help you pick the right time.</p>
+    </div>
+  </section>
+
+  <!-- 4. on the day -->
+  <section class="block" id="day" aria-labelledby="day-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow" data-reveal>On the day</p>
+          <h2 id="day-h" data-reveal style="--y:40px; --d:.08s">A little prep goes a long way.</h2>
+        </div>
+        <p class="lede" data-reveal style="--d:.16s">Five minutes before the visit and a little care afterwards make the difference between holes and a thicker lawn.</p>
+      </div>
+      <div class="day" data-stagger="120">
+        <div class="list-card" data-reveal>
+          <h3>Before we arrive</h3>
+          <ul class="check">
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Mow</b> a day or two before, to your normal height.</span></li>
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Water</b> the day before if it's been dry, so the tines go in deep.</span></li>
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Mark</b> sprinkler heads, shallow pipes and invisible dog-fence lines with flags.</span></li>
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Clear</b> hoses, toys and furniture, and keep pets inside.</span></li>
+          </ul>
+        </div>
+        <div class="list-card" data-reveal>
+          <h3>After the visit</h3>
+          <ul class="check">
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Leave the plugs.</b> They crumble back into the lawn with rain and mowing.</span></li>
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Water</b> well over the following days if there's no rain.</span></li>
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Overseed or feed</b> now if you planned to; seed and fertiliser reach the soil through the holes.</span></li>
+            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9"/><path d="M7 11.5l2.6 2.5L15 8.5"/></svg><span><b>Mow as normal</b> once the plugs have dried out.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. faq -->
+  <section class="block faq" id="faq" aria-labelledby="faq-h" style="background:var(--paper-2)">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="eyebrow" data-reveal>Questions</p>
+        <h2 id="faq-h" data-reveal style="--y:40px; --d:.08s">Good to know before you book.</h2>
+      </div>
+      <div data-reveal style="--d:.12s">
+        <details>
+          <summary>How often should a lawn be aerated? <span class="pm" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+          <p>Most lawns do well with aeration once a year. Heavy clay soil, or a lawn that gets a lot of foot traffic, can benefit from it more often.</p>
+        </details>
+        <details>
+          <summary>Will the plugs make a mess? <span class="pm" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+          <p>For a little while the lawn looks dotted with small soil plugs. Leave them where they are: they break down on their own with rain and mowing, and return nutrients to the soil.</p>
+        </details>
+        <details>
+          <summary>Is aeration the same as dethatching? <span class="pm" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+          <p>No. Dethatching rakes out the layer of dead stems on top of the soil. Core aeration pulls plugs out of the soil itself to relieve compaction. Aeration also helps a thin thatch layer break down.</p>
+        </details>
+        <details>
+          <summary>Can I overseed afterwards? <span class="pm" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+          <p>Yes, and it's the best time to. Seed that falls into the holes has soil contact, moisture and protection, so it takes far better than seed scattered on hard ground.</p>
+        </details>
+        <details>
+          <summary>What about my sprinklers and buried lines? <span class="pm" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+          <p>Mark sprinkler heads, shallow irrigation lines and invisible pet-fence wires with small flags before the visit, so the machine can steer around them.</p>
+        </details>
+        <details>
+          <summary>How much does it cost? <span class="pm" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+          <p>It depends mainly on the size of your lawn. You'll get a price before anything is confirmed.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. final cta -->
+  <section class="final" id="book" aria-labelledby="book-h">
+    <div class="final-card">
+      <p class="eyebrow" data-reveal style="color:#a9d3a2; justify-content:center">This season</p>
+      <h2 id="book-h" data-reveal style="--y:40px; --d:.08s">Give your lawn room to breathe.</h2>
+      <p data-reveal style="--d:.16s">Book core aeration now and the grass gets the whole growing season to root deeper and fill in thicker.</p>
+      <div data-reveal style="--d:.24s"><a class="btn btn--light" href="#book">Book aeration <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+      <svg class="grass" viewBox="0 0 1200 90" preserveAspectRatio="none" fill="currentColor" aria-hidden="true"><path d="M0 90 L0 60 L20 30 L30 62 L50 20 L62 64 L84 34 L96 66 L120 24 L134 62 L160 38 L172 66 L196 18 L210 60 L236 36 L248 66 L272 26 L286 62 L312 40 L324 66 L350 22 L362 62 L388 34 L400 66 L426 20 L440 60 L466 38 L478 66 L504 26 L518 62 L544 36 L556 66 L582 18 L596 62 L622 40 L634 66 L660 24 L674 60 L700 34 L712 66 L738 22 L752 62 L778 38 L790 66 L816 26 L830 60 L856 36 L868 66 L894 20 L908 62 L934 40 L946 66 L972 24 L986 60 L1012 34 L1024 66 L1050 22 L1064 62 L1090 38 L1102 66 L1128 26 L1142 60 L1168 36 L1180 66 L1200 40 L1200 90 Z"/></svg>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Nelson Aeration</span>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero background lines
+  const svg = document.querySelector('.bg svg');
+  for (let i = 0; i < 15; i++) {
+    const y = 980 - i * 70, c = 160 + (i % 3) * 60;
+    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('d', `M-40 ${y} C 380 ${y - c}, 560 ${y + c * .6}, 900 ${y - 260} S 1360 ${y - 520}, 1500 ${y - 640}`);
+    p.setAttribute('stroke-width', (1.2 + (i * 0.37) % 2.7).toFixed(2));
+    p.setAttribute('opacity', (0.55 + (i * 0.13) % 0.3).toFixed(2));
+    svg.appendChild(p);
+  }
+
+  // floating pill nav after the hero (keyboard users keep the hero nav and in-page links)
+  const pillnav = document.getElementById('pillnav'), hero = document.getElementById('top');
+  new IntersectionObserver(([e]) => {
+    const show = !e.isIntersecting;
+    pillnav.classList.toggle('show', show);
+    pillnav.setAttribute('aria-hidden', String(!show));
+    pillnav.querySelectorAll('a').forEach(a => a.tabIndex = show ? 0 : -1);
+  }, { threshold: 0.08 }).observe(hero);
+
+  // staggered reveal (MotionSites recipe)
+  document.querySelectorAll('[data-stagger]').forEach(group => {
+    const step = +group.dataset.stagger || 120;
+    group.querySelectorAll('[data-reveal]').forEach((el, i) => el.style.setProperty('--d', (i * step / 1000) + 's'));
+  });
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+  }), { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => reduce ? el.classList.add('is-in') : io.observe(el));
+
+  // soil diagram draws in once visible
+  const soil = document.getElementById('soil');
+  new IntersectionObserver(([e], o) => { if (e.isIntersecting) { soil.classList.add('drawn'); o.disconnect(); } }, { threshold: 0.35 }).observe(soil);
+
+  // hero reveal (Wild Pil)
+  const video = document.querySelector('.pill video');
+  if (reduce) return;
+  video.play().catch(() => {});
+  const $ = s => document.querySelector(s);
+  const pill = $('.pill'), h1 = $('h1.word'), bg = $('.bg'), nav = $('.topnav'), foot = $('.foot'), rule = $('.foot .rule'), line = $('.pill .line');
+  const phone = () => matchMedia('(max-width: 720px)').matches;
+  const D = 2100, ease = 'cubic-bezier(.45,0,.3,1)';
+  let anims = [];
+  function play() {
+    anims.forEach(a => a.cancel());
+    const fs = parseFloat(getComputedStyle(h1).fontSize), opts = { duration: D, fill: 'forwards' };
+    if (phone()) {
+      const h = (innerWidth - 40) / 1.85;
+      anims = [
+        pill.animate([{ clipPath: 'inset(0 50%)', height: '1.5px' }, { clipPath: 'inset(0 0%)', height: '1.5px', offset: .14 },
+                      { height: h * .1 + 'px', offset: .3 }, { height: h * .55 + 'px', offset: .58 }, { clipPath: 'inset(0 0%)', height: h + 'px' }], { ...opts, easing: ease }),
+        h1.animate([{ gap: '.03em' }, { gap: '.03em', offset: .14 }, { gap: '.1em' }], opts)];
+    } else {
+      anims = [
+        pill.animate([{ width: fs * .012 + 'px', clipPath: 'inset(50% 0)' }, { width: fs * .012 + 'px', clipPath: 'inset(0% 0)', offset: .14 },
+                      { width: fs * .16 + 'px', offset: .3 }, { width: fs * 1.81 + 'px', offset: .58 }, { width: fs * 3.62 + 'px', clipPath: 'inset(0% 0)' }], { ...opts, easing: ease }),
+        h1.animate([{ gap: '.026em' }, { gap: '.026em', offset: .14 }, { gap: '.05em', offset: .58 }, { gap: '.085em' }], opts)];
+    }
+    anims.push(
+      line.animate([{ opacity: 1 }, { opacity: 1, offset: .14 }, { opacity: 0, offset: .3 }, { opacity: 0 }], opts),
+      bg.animate([{ opacity: 0 }, { opacity: 0, offset: .45 }, { opacity: 1, offset: .78 }, { opacity: 1 }], opts),
+      nav.animate([{ transform: 'translateY(-140%)' }, { transform: 'translateY(-140%)', offset: .5, easing: 'cubic-bezier(.2,.8,.2,1)' }, { transform: 'translateY(0)', offset: .86 }, { transform: 'translateY(0)' }], opts),
+      foot.animate([{ transform: 'translateY(160%)' }, { transform: 'translateY(160%)', offset: .52, easing: 'cubic-bezier(.2,.8,.2,1)' }, { transform: 'translateY(0)', offset: .9 }, { transform: 'translateY(0)' }], opts),
+      rule.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(0)', offset: .4 }, { transform: 'scaleX(1)', offset: .95 }, { transform: 'scaleX(1)' }], opts));
+  }
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(play);
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(play, 150); });
+})();
+</script>
+</body>
+</html>

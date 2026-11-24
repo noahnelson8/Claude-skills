@@ -71,6 +71,7 @@ Follow `references/output-targets.md` for the chosen target. Always:
 
 ## Step 7: Look, then fix (never skip)
 - **MotionSites / UI UX Pro Max lead:** `python "<kit>/vendor/motionsites/scripts/shoot.py" <page.html> shots/` (needs Playwright, which is installed), then open and look at desktop and mobile shots against `vendor/motionsites/references/review.md`.
+- **Full pages (more than a hero):** `shoot.py` only captures the first screen. Also run `python "<kit>/scripts/fullpage.py" <page.html> shots/`: it scrolls through so scroll reveals fire, then saves `full-desktop.png` and `full-mobile.png` and reports overflow and console errors. Look at both, and crop/zoom any diagram or small detail before judging it.
 - **ScrollCraft lead:** its Step 5 (`serve.mjs` + `shoot.mjs` desktop, mobile and reduced-motion), then read the contact sheet.
 - Fix every blocking problem, then the two weakest things, then shoot once more. If screenshots are impossible, say so plainly; never claim a page was checked when it wasn't.
 - Then run the UI UX Pro Max priority 1–3 checks (contrast 4.5:1, touch targets, performance/CLS).

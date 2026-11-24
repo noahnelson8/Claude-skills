@@ -19,7 +19,7 @@ $Vendors = @(
     @{ Name = 'scroll-craft';  Repo = 'https://github.com/nateherkai/scroll-craft.git';              Sha = '75d81f74e83692add18cd7a8a8e078b8a887a579'; Path = 'plugins/nateherk-design/skills/scroll-craft' },
     @{ Name = 'ui-ux-pro-max'; Repo = 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git'; Sha = 'cc7b20d85d64d8fa022292cfad731995d3cd4eeb'; Path = '.claude/skills/ui-ux-pro-max' }
 )
-$KitFiles = @('SKILL.md', 'install.ps1', 'references')
+$KitFiles = @('SKILL.md', 'install.ps1', 'references', 'scripts')
 
 $src = $PSScriptRoot
 if (-not $ConfigDirs) {
