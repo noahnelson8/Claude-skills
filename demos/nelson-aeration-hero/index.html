@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nelson Aeration · Core lawn aeration</title>
+<meta name="description" content="Core aeration that lets your lawn breathe, drink and grow. Book aeration with Nelson Aeration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;650;800&display=swap" rel="stylesheet">
+<style>
+  html, body { background: #ffffff; margin: 0; }
+  :root {
+    --paper: #f3f2ec;
+    --ink: #17291e;
+    --ink-soft: #3b4a40;
+    --rule: #a7ab9f;
+    --accent: #2f6b3f;
+    --accent-ink: #ffffff;
+    --pill-fill: #d6dccf;
+    --fs: min(19.6vh, 13.2vw);
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--ink);
+    min-height: 100vh; min-height: 100svh;
+    overflow-x: hidden;
+  }
+  .stage { position: relative; min-height: 100vh; min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto; }
+
+  /* paper + flowing lines */
+  .bg { position: absolute; inset: 0; background: var(--paper); opacity: 0; pointer-events: none; }
+  .bg svg { width: 100%; height: 100%; display: block; }
+
+  /* nav */
+  nav { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center;
+        padding: 18px clamp(20px, 3.2vw, 44px); font-size: max(13px, calc(var(--fs) * .072)); font-weight: 450; transform: translateY(-140%); }
+  .brand { font-weight: 650; letter-spacing: -.01em; text-decoration: none; color: var(--ink); }
+  .nav-cta { color: var(--ink); text-decoration: none; border-bottom: 1px solid currentColor; padding: 10px 0; }
+
+  /* hero word + pill */
+  .hero { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .tag { margin: calc(var(--fs) * .02) 0 0; font-size: clamp(17px, calc(var(--fs) * .14), 26px); font-weight: 500; letter-spacing: -.01em; color: var(--ink); text-align: center; text-wrap: balance; }
+  h1 { margin: 0; font-size: var(--fs); font-weight: 800; letter-spacing: -.045em; line-height: .8;
+       display: flex; align-items: center; gap: .026em; transform: translateY(-7%); }
+  .half { display: block; }
+  .pill { position: relative; height: 1.81em; width: .012em; border-radius: 999px; overflow: hidden;
+          background: var(--pill-fill); clip-path: inset(50% 0); flex: none; }
+  .pill video, .pill .poster { position: absolute; top: 0; left: 50%; height: 100%; min-width: 4.2em; width: 100%;
+          transform: translateX(-50%); object-fit: cover; object-position: center top; }
+  .pill .line { position: absolute; inset: 0; background: #b5b9ae; }
+  .pill .icon { position: absolute; top: 50%; width: .14em; height: .14em; transform: translateY(-50%); opacity: 0; color: #fff; }
+  .pill .icon.l { left: .16em; } .pill .icon.r { right: .16em; }
+
+  /* footer */
+  .foot { position: relative; z-index: 2; display: flex; align-items: flex-end; gap: clamp(16px, 2vw, 28px);
+          padding: 0 clamp(20px, 3.2vw, 44px) clamp(20px, 3vw, 36px); transform: translateY(160%); }
+  .foot p { margin: 0; width: calc(var(--fs) * 1.6); max-width: 440px; font-size: max(14px, calc(var(--fs) * .07)); line-height: 1.45; color: var(--ink-soft); }
+  .foot p::first-letter { float: left; font-size: 2.35em; line-height: .9; font-weight: 650; margin: .06em .08em 0 0; color: var(--ink); }
+  .foot .rule { flex: 1; height: 1px; background: var(--rule); transform: scaleX(0); margin-bottom: 26px; }
+  .btn { flex: none; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px;
+         background: var(--ink); color: #fff; text-decoration: none; font-weight: 550; font-size: 16px; border: 0; cursor: pointer;
+         transition: transform .2s ease, background-color .2s ease; }
+  .btn:hover { transform: translateY(-2px); background: var(--accent); }
+  .btn svg { width: 16px; height: 16px; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* phone */
+  @media (max-width: 720px) {
+    :root { --fs: min(34vw, 16.5vh); }
+    nav { font-size: 13px; padding: 16px 20px; }
+    h1 { flex-direction: column; gap: .03em; transform: none; }
+    .tag { margin-top: 18px; padding: 0 20px; font-size: 17px; }
+    .pill { width: calc(100vw - 40px); height: 1.5px; clip-path: inset(0 50%); }
+    .pill video, .pill .poster { min-width: 0; width: 100%; height: calc((100vw - 40px) / 1.85); top: 0; }
+    .foot { flex-wrap: wrap; padding: 0 20px 22px; }
+    .foot p { width: 100%; max-width: none; font-size: 14.5px; line-height: 1.5; }
+    .foot .rule { margin-bottom: 26px; }
+    .btn { min-height: 48px; }
+  }
+
+  /* reduced motion: final state, video paused */
+  @media (prefers-reduced-motion: reduce) {
+    .bg { opacity: 1; } nav, .foot { transform: none; } .foot .rule { transform: none; }
+    .pill { clip-path: none; width: 3.62em; } .pill .line { opacity: 0; } .pill .icon { opacity: .85; }
+    h1 { gap: .085em; }
+  }
+  @media (prefers-reduced-motion: reduce) and (max-width: 720px) {
+    .pill { width: calc(100vw - 40px); height: calc((100vw - 40px) / 1.85); } h1 { gap: .1em; }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 960" preserveAspectRatio="none" fill="none" stroke="#fff" stroke-linecap="round"></svg>
+  </div>
+
+  <nav aria-label="Main">
+    <a class="brand" href="#">Nelson Aeration</a>
+    <a class="nav-cta" href="#book">Book aeration</a>
+  </nav>
+
+  <main class="hero">
+    <h1 aria-label="Grow. Nelson Aeration, core lawn aeration">
+      <span class="half" aria-hidden="true">GR</span>
+      <span class="pill" aria-hidden="true">
+        <video muted loop playsinline preload="auto"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261029_084140_0b1278a9-189f-4d9e-9a36-00f6a21e4788.mp4"></video>
+        <span class="line"></span>
+        <svg class="icon l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 21V11M12 11c0-4 3-7 7-7 0 4-3 7-7 7zM12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg>
+        <svg class="icon r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9c3-2 5 2 8 0s5-2 8 0M4 14c3-2 5 2 8 0s5-2 8 0"/></svg>
+      </span>
+      <span class="half" aria-hidden="true">OW</span>
+    </h1>
+    <p class="tag">Core lawn aeration for thicker, healthier grass.</p>
+  </main>
+
+  <footer class="foot">
+    <p>Soil packs down a little more every season. Aeration pulls small plugs so air, water and nutrients reach the roots again. Best in spring or fall.</p>
+    <span class="rule" aria-hidden="true"></span>
+    <a class="btn" id="book" href="#book">Book aeration
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </footer>
+</div>
+
+<script>
+(() => {
+  // flowing white lines on the paper background
+  const svg = document.querySelector('.bg svg');
+  for (let i = 0; i < 15; i++) {
+    const y = 980 - i * 70, c = 160 + (i % 3) * 60;
+    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('d', `M-40 ${y} C 380 ${y - c}, 560 ${y + c * .6}, 900 ${y - 260} S 1360 ${y - 520}, 1500 ${y - 640}`);
+    p.setAttribute('stroke-width', (1.2 + (i * 0.37) % 2.7).toFixed(2));
+    p.setAttribute('opacity', (0.55 + (i * 0.13) % 0.3).toFixed(2));
+    svg.appendChild(p);
+  }
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const video = document.querySelector('.pill video');
+  if (reduce) { video.removeAttribute('autoplay'); return; }
+  video.play().catch(() => {});
+
+  const $ = s => document.querySelector(s);
+  const pill = $('.pill'), h1 = $('h1'), bg = $('.bg'), nav = $('nav'), foot = $('.foot'), rule = $('.rule'), line = $('.pill .line');
+  const icons = document.querySelectorAll('.pill .icon');
+  const phone = () => matchMedia('(max-width: 720px)').matches;
+  const D = 2100, ease = 'cubic-bezier(.45,0,.3,1)';
+  let anims = [];
+
+  function play() {
+    anims.forEach(a => a.cancel());
+    const fs = parseFloat(getComputedStyle(h1).fontSize);
+    const opts = { duration: D, fill: 'forwards' };
+    if (phone()) {
+      const w = innerWidth - 40, h = w / 1.85;
+      anims = [
+        pill.animate([{ clipPath: 'inset(0 50%)', height: '1.5px' }, { clipPath: 'inset(0 0%)', height: '1.5px', offset: .14 },
+                      { height: (h * .1) + 'px', offset: .3 }, { height: (h * .55) + 'px', offset: .58 }, { clipPath: 'inset(0 0%)', height: h + 'px' }], { ...opts, easing: ease }),
+        h1.animate([{ gap: '.03em' }, { gap: '.03em', offset: .14 }, { gap: '.1em' }], opts)
+      ];
+    } else {
+      anims = [
+        pill.animate([{ width: fs * .012 + 'px', clipPath: 'inset(50% 0)' }, { width: fs * .012 + 'px', clipPath: 'inset(0% 0)', offset: .14 },
+                      { width: fs * .16 + 'px', offset: .3 }, { width: fs * 1.81 + 'px', offset: .58 }, { width: fs * 3.62 + 'px', clipPath: 'inset(0% 0)' }],
+                     { ...opts, easing: ease }),
+        h1.animate([{ gap: '.026em' }, { gap: '.026em', offset: .14 }, { gap: '.05em', offset: .58 }, { gap: '.085em' }], opts)
+      ];
+    }
+    anims.push(
+      line.animate([{ opacity: 1 }, { opacity: 1, offset: .14 }, { opacity: 0, offset: .3 }, { opacity: 0 }], opts),
+      bg.animate([{ opacity: 0 }, { opacity: 0, offset: .45 }, { opacity: 1, offset: .78 }, { opacity: 1 }], opts),
+      nav.animate([{ transform: 'translateY(-140%)' }, { transform: 'translateY(-140%)', offset: .5, easing: 'cubic-bezier(.2,.8,.2,1)' }, { transform: 'translateY(0)', offset: .86 }, { transform: 'translateY(0)' }], opts),
+      foot.animate([{ transform: 'translateY(160%)' }, { transform: 'translateY(160%)', offset: .52, easing: 'cubic-bezier(.2,.8,.2,1)' }, { transform: 'translateY(0)', offset: .9 }, { transform: 'translateY(0)' }], opts),
+      rule.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(0)', offset: .4 }, { transform: 'scaleX(1)', offset: .95 }, { transform: 'scaleX(1)' }], opts),
+      ...[...icons].map(i => i.animate([{ opacity: 0 }, { opacity: 0, offset: .8 }, { opacity: .85 }], opts))
+    );
+  }
+
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(play);
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(play, 150); });
+})();
+</script>
+</body>
+</html>

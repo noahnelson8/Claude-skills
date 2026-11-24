@@ -8,3 +8,6 @@ intake/.tmp-*/
 cookies.txt
 *cookies*.txt
 __pycache__/
+
+# site-design-kit: bundled tools are downloaded by install.ps1, not committed
+.claude/skills/site-design-kit/vendor/
