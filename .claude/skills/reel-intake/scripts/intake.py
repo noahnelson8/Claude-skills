@@ -29,6 +29,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -75,6 +76,19 @@ def slugify(text: str, max_len: int = 50) -> str:
 
 def is_url(s: str) -> bool:
     return s.startswith("http://") or s.startswith("https://")
+
+
+def move_dir(src: Path, dest: Path, attempts: int = 8) -> None:
+    """Rename a folder, tolerating OneDrive/antivirus briefly locking fresh files (WinError 5/32).
+    Retries with backoff, then falls back to copy + delete."""
+    for i in range(attempts):
+        try:
+            src.rename(dest)
+            return
+        except PermissionError:
+            time.sleep(0.25 * (i + 1))
+    shutil.copytree(src, dest)
+    shutil.rmtree(src, ignore_errors=True)
 
 
 # ---------------------------------------------------------------- download
@@ -183,6 +197,7 @@ def process(item: str, args, ffmpeg: str) -> dict:
     tmp = args.out / f".tmp-{stamp}"
     tmp.mkdir(parents=True, exist_ok=True)
     result = {"input": item, "ok": False}
+    stage = "download"  # the login/cookie hint only makes sense for download errors
     try:
         if is_url(item):
             info, video = download(item, tmp, ffmpeg, args.cookies, args.cookies_from_browser)
@@ -204,7 +219,8 @@ def process(item: str, args, ffmpeg: str) -> dict:
         while dest.exists():
             dest = args.out / f"{slug}-{n}"
             n += 1
-        tmp.rename(dest)
+        stage = "process"
+        move_dir(tmp, dest)
         tmp = dest
         video = dest / video.name if video else None
 
@@ -276,10 +292,15 @@ def process(item: str, args, ffmpeg: str) -> dict:
         result.update(ok=True, folder=str(dest), frames=len(frames), transcript=bool(transcript), note=t_err)
     except Exception as e:
         msg = str(e)
+        low = msg.lower()
         hint = ""
-        if any(k in msg.lower() for k in ("proxy", "unable to connect", "getaddrinfo", "network is unreachable")):
+        if isinstance(e, PermissionError):
+            hint = " -> a file was locked (OneDrive/antivirus?). Retry, or pass --out to a folder outside OneDrive"
+        elif stage != "download" or not is_url(item):
+            pass
+        elif any(k in low for k in ("proxy", "unable to connect", "getaddrinfo", "network is unreachable")):
             hint = " -> network problem: this machine can't reach the site"
-        elif is_url(item) and any(k in msg.lower() for k in ("login", "cookie", "rate", "401", "403", "private", "unavailable")):
+        elif re.search(r"login|cookie|rate.?limit|\b401\b|\b403\b|private|unavailable", low):
             hint = " -> Instagram wants a login. Retry with --cookies-from-browser firefox or --cookies cookies.txt"
         result["error"] = msg.splitlines()[0][:300] + hint
         shutil.rmtree(tmp, ignore_errors=True)
