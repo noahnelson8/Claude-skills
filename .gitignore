@@ -1,0 +1,10 @@
+# reel-intake: keep notes, frames and transcripts; never videos or login cookies
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.m4a
+intake/.tmp-*/
+cookies.txt
+*cookies*.txt
+__pycache__/
